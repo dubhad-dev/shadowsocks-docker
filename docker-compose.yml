@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  shadowsocks:
+    image: dubhad/shadowsocks:3.3.5
+    restart: always
+    environment:
+      - TIMEOUT=300
+      - METHOD=xchacha20-ietf-poly1305
+      - DNS_SERVER
+      - PASSWORD
+      - PORT
+    ports:
+      - "${PORT}:${PORT}"
